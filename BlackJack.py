@@ -2,6 +2,7 @@ import os
 import sys
 import random
 import Options
+import Account
 import Cards
 import Calculate
 from Art import logo
@@ -20,10 +21,11 @@ print(logo)
 players = Options.SetPlayers()
 difficulty = Options.SetDifficulty()
 for i in range(players):
-    activePlayers = Options.NewPlayer(activePlayers, retiredPlayers)
+    activePlayers = Account.NewPlayer(activePlayers, retiredPlayers)
 
+# Used for troubleshooting account process:
 print("Printing Live Players:\n")
-for player in livePlayers:
+for player in activePlayers:
     print(player)
 
 print("Printing Old Players:\n")
