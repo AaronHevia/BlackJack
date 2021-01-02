@@ -20,14 +20,14 @@ print(logo)
 players = Options.SetPlayers()
 difficulty = Options.SetDifficulty()
 for i in range(players):
-    livePlayers = Options.NewPlayer(livePlayers, previousPlayers)
+    activePlayers = Options.NewPlayer(activePlayers, retiredPlayers)
 
 print("Printing Live Players:\n")
 for player in livePlayers:
     print(player)
 
 print("Printing Old Players:\n")
-for player in previousPlayers:
+for player in retiredPlayers:
     print(player)
 
 
