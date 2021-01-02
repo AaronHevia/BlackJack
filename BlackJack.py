@@ -6,8 +6,8 @@ import Cards
 import Calculate
 from Art import logo
 
-livePlayers = {}
-previousPlayers = {}
+activePlayers = {}
+retiredPlayers = {}
 
 deck = Cards.BuildDeck()
 gameDeck = []
@@ -15,7 +15,7 @@ drawFaceDown = Cards.DrawFaceDown()
 drawIndex = 0
 drawCard = Cards.DrawCard("10", "Spades") #remove after testing
 
-os.system('cls')
+os.system('cls') #Remove after finished.  Arrange what to display and use in between each hand call.
 print(logo)
 players = Options.SetPlayers()
 difficulty = Options.SetDifficulty()
