@@ -4,7 +4,6 @@ import random
 import Options
 import Account
 import Cards
-import Calculate
 from Art import logo
 
 activePlayers = {}
