@@ -1,18 +1,11 @@
 import Password
 
-# TODO: Get shuffled alphabet. from Password Class.
-
-# TODO: Get "PIN" (Cipher) from Password Class.
-
-# Add New Player
 def AddNewPlayer(activePlayers, name):
     # New players will start with $1000, $$ Won, $$ Lost, Ciphered Password, PIN, and Shuffled Alphabet
-    pwd = ""
-    pin = 0
-    alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r',
-    's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
-    'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-    player  = activePlayers[name] = [1000, 0, 0, pwd, pin, alphabet]
+    pwd = ""    #TODO:  Get password from Password Class.
+    pin = 0 #TODO: Get "PIN" (Cipher) from Password Class.
+    characters = [] #TODO: Get shuffled characters from Password Class.
+    player  = activePlayers[name] = [1000, 0, 0, pwd, pin, characters]
     return player
 
 def NewPlayer(activePlayers, retiredPlayers):    
