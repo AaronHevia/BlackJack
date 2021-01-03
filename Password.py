@@ -3,17 +3,29 @@ characters = [
     'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')'
 ]
 
+#Create and Verify Password.
+
+#Create and Verify PIN.
+
+#Create character list.
+
+#Validate Account.
+
+#Forgot Password.
+
+#Forgot PIN.
+
 def Caesar(startText, shiftAmount, cipherDirection):
   endText = ""
   if cipherDirection == "decode":
     shiftAmount *= -1
   for char in startText:
-    if char not in alphabet:
+    if char not in characters:
       endText += char
     else:    
-      index = alphabet.index(char)
+      index = characters.index(char)
       shiftIndex = index + shiftAmount
-      endText += alphabet[shiftIndex]    
+      endText += characters[shiftIndex]    
   print(f"Here's the {cipherDirection}d result:  {endText}")
 
 def Run():
