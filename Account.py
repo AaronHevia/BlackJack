@@ -1,11 +1,8 @@
 import Password
 
-def AddNewPlayer(activePlayers, name):
-    # New players will start with $1000, $$ Won, $$ Lost, Ciphered Password, PIN, and Shuffled Alphabet
-    pwd = ""    #TODO:  Get password from Password Class.
-    pin = 0 #TODO: Get "PIN" (Cipher) from Password Class.
-    characters = [] #TODO: Get shuffled characters from Password Class.
-    player  = activePlayers[name] = [1000, 0, 0, pwd, pin, characters]
+def AddNewPlayer(activePlayers, name, password, pin, characters):
+    # New players will start with $1000, $$ Won, $$ Lost, Ciphered Password, PIN, and Shuffled Alphabet    
+    player  = activePlayers[name] = [1000, 0, 0, password, pin, characters]
     return player
 
 def NewPlayer(activePlayers, retiredPlayers):    
@@ -14,15 +11,24 @@ def NewPlayer(activePlayers, retiredPlayers):
     i = len(allPlayers)
 
     if i == 0:
-        AddNewPlayer(activePlayers, name)
+        print("Need to create Password and PIN.")
+        #TODO:  Password, PIN and Characters creation.
+        password = ""    #TODO:  Get password from Password Class.
+        pin = 0 #TODO: Get "PIN" (Cipher) from Password Class.
+        characters = [] #TODO: Get shuffled characters from Password Class.
     else:
-        for player in allPlayers:            
+        for player in allPlayers:
             if name == player:
                 print("Player already exists in session.  Enter a new player.")
                 NewPlayer(activePlayers, retiredPlayers)
             else:
-                AddNewPlayer(activePlayers, name)
+                print("Need to create Password and PIN.")
+                #TODO:  Password, PIN and Characters creation.
+                password = ""    #TODO:  Get password from Password Class.
+                pin = 0 #TODO: Get "PIN" (Cipher) from Password Class.
+                characters = [] #TODO: Get shuffled characters from Password Class.
         
+    AddNewPlayer(activePlayers, name, password, pin, characters)
     return activePlayers
 
 def RetirePlayer(activePlayers, retiredPlayers):
