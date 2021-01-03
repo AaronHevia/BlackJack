@@ -15,8 +15,7 @@ def AddNewPlayer(activePlayers, name):
     player  = activePlayers[name] = [1000, 0, 0, pwd, pin, alphabet]
     return player
 
-def NewPlayer(activePlayers, retiredPlayers):   
-    #Merge dictionaries to make a single search.
+def NewPlayer(activePlayers, retiredPlayers):    
     allPlayers = activePlayers | retiredPlayers    
     name = input("\nEnter a player name:  ")
     i = len(allPlayers)
@@ -33,12 +32,16 @@ def NewPlayer(activePlayers, retiredPlayers):
         
     return activePlayers
 
+def RetirePlayer(activePlayers, retiredPlayers):
+    name = input("Which player will be retiring:  ")
+    #TODO:  Validate account to retire.
+    retiredPlayers[name] = activePlayers[name]    
+    del activePlayers[name]
+    print(f"{name} has retired with ${retiredPlayers[name][0]}.  You have made ${retiredPlayers[name][1]} and lost ${retiredPlayers[name][2]} in this session.")
 
-
-# Retire Player
-    #Copy active player account info to retiredPlayers
-    #Delete copied active player account in activePlayers
-
-# Unretire Player
-    #Copy retired player account info to activePlayers
-    #Delete copied retired player account in retiredPlayers
+def UnretirePlayer(activePlayers, retiredPlayers):
+    name = input("Which player will be returning to the table:  ")
+    #TODO:  Validate account to return.
+    activePlayers[name] = retiredPlayers[name]
+    del retiredPlayers[name]
+    print(f"Welcome back {name}.  You have ${activePlayers[name][0]} remaining.  Good luck!")
