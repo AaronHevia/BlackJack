@@ -1,34 +1,37 @@
 import random
 import getpass
 
-characters = [
-    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
-    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 
-    '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')'
-]
+lower = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+upper = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+number = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+chars = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')']
+characters = lower + upper + number + chars
 
 #Shuffle characters to create Individual Account Cipher.
-def Shuffle():
-  accountCipher = []  
+def Shuffle():  
   random.shuffle(characters)  
-  accountCipher.append(characters)
-  accountCipher.append(characters)
+  accountCipher = characters + characters  
   return accountCipher
   
-
 #Create and Verify Password.
 def CreatePWD():
   while True:
-    password = getpass.getpass("Enter a Password:  ")
+    password = getpass.getpass("Enter a Password (Password must contain):  ") #TODO: Finish Password Creation.
     verify = getpass.getpass("Retype your Password:  ")
     if password != verify:
-      print("Invalid entry.")
+      print("Your Passwords don't match.")
     else:
       break
 
   return password
 
 #Create and Verify PIN.
+def CreatePIN():
+  while True:
+    pin = int(getpass.getpass("Enter a 3 to 6 digit PIN:  "))
+    verify = int(getpass.getpass("Retype your PIN:  "))
+    if pin != verify:
+      print
 
 #Create character list.
 
@@ -55,7 +58,7 @@ def Run():
   direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()  
   text = input("Type your message:\n").lower()
   shift = int(input("Type the shift number:\n"))  
-  shift = shift % 26
+  shift = shift % 72
   Caesar(startText=text, shiftAmount=shift, cipherDirection=direction)  
   reload = input("Do you want to cypher again? Type 'yes' or 'no'.").lower()  
   if reload == "yes":
