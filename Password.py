@@ -9,10 +9,10 @@ characters = [
 
 #Shuffle characters to create Individual Account Cipher.
 def Shuffle():
-  accountCipher = []
-  cipher = random.shuffle(characters)
-  accountCipher.append(cipher)
-  accountCipher.append(cipher)
+  accountCipher = []  
+  random.shuffle(characters)  
+  accountCipher.append(characters)
+  accountCipher.append(characters)
   return accountCipher
   
 
