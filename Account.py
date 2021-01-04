@@ -10,19 +10,17 @@ def NewPlayer(activePlayers, retiredPlayers):
     name = input("\nEnter a player name:  ")
     i = len(allPlayers)
 
-    if i == 0:
-        print("Need to create Password and PIN.")
+    if i == 0:        
         #TODO:  Password, PIN and Characters creation.
         password = ""    #TODO:  Get password from Password Class.
         pin = 0 #TODO: Get "PIN" (Cipher) from Password Class.
-        characters = [] #TODO: Get shuffled characters from Password Class.
+        characters = Password.Shuffle() 
     else:
         for player in allPlayers:
             if name == player:
                 print("Player already exists in session.  Enter a new player.")
                 NewPlayer(activePlayers, retiredPlayers)
-            else:
-                print("Need to create Password and PIN.")
+            else:                
                 #TODO:  Password, PIN and Characters creation.
                 password = ""    #TODO:  Get password from Password Class.
                 pin = 0 #TODO: Get "PIN" (Cipher) from Password Class.
