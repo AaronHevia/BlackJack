@@ -1,3 +1,4 @@
+import random
 import getpass
 
 characters = [
@@ -7,6 +8,13 @@ characters = [
 ]
 
 #Shuffle characters to create Individual Account Cipher.
+def Shuffle():
+  accountCipher = []
+  cipher = random.shuffle(characters)
+  accountCipher.append(cipher)
+  accountCipher.append(cipher)
+  return accountCipher
+  
 
 #Create and Verify Password.
 def CreatePWD():
