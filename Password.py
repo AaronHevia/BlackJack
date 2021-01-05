@@ -16,43 +16,17 @@ def Shuffle():
 #Create and Verify Password.
 def CreatePWD():
   while True:
-    print("Please enter a Password.")
-    password = getpass.getpass("Password must be at least 10 characters and contain:\n2 upper-cased letters\n2 lower-cased letters\n2 numbers\nand 2 special characters ('!', '@', '#', '$', '%', '^', '&', '*', '(', ')'):\n")
+    password = getpass.getpass("Enter a Password (Password must contain):  ")
     verify = getpass.getpass("Retype your Password:  ")
-    lowerCount = 0
-    upperCount = 0
-    numberCount = 0
-    charCount = 0
-
-    for char in password:
-      if char in lower:
-        lowerCount += 1
-      elif char in upper:
-        upperCount += 1
-      elif char in number:
-        numberCount += 1
-      else:
-        charCount += 1
-
-    if len(password) < 10:
-      print("Password is not long enough.")
-    elif password != verify:
+    if password != verify:
       print("Your Passwords don't match.")
-    elif lowerCount <= 1:
-      print("Password must contain at least 2 lower-cased characters.")
-    elif upperCount <=1:
-      print("Password must contain at least 2 upper-cased characters.")
-    elif numberCount <= 1:
-      print("Password must contain at least 2 numbers.")
-    elif charCount <= 1:
-      print("Password must contain at least 2 2 special characters ('!', '@', '#', '$', '%', '^', '&', '*', '(', ')').")
     else:
       break
 
   return password
 
-#Create and Verify PIN.
-def CreatePIN():
+#Create and Verify PIN. 
+def CreatePIN():  #TODO:  Finalize PIN Verification.
   while True:
     pin = int(getpass.getpass("Enter a 3 to 6 digit PIN:  "))
     verify = int(getpass.getpass("Retype your PIN:  "))
