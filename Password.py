@@ -16,10 +16,36 @@ def Shuffle():
 #Create and Verify Password.
 def CreatePWD():
   while True:
-    password = getpass.getpass("Enter a Password (Password must contain):  ") #TODO: Finish Password Creation.
+    print("Please enter a Password.")
+    password = getpass.getpass("Password must be at least 10 characters and contain:\n2 upper-cased letters\n2 lower-cased letters\n2 numbers\nand 2 special characters ('!', '@', '#', '$', '%', '^', '&', '*', '(', ')'):\n")
     verify = getpass.getpass("Retype your Password:  ")
-    if password != verify:
+    lowerCount = 0
+    upperCount = 0
+    numberCount = 0
+    charCount = 0
+
+    for char in password:
+      if char in lower:
+        lowerCount += 1
+      elif char in upper:
+        upperCount += 1
+      elif char in number:
+        numberCount += 1
+      else:
+        charCount += 1
+
+    if len(password) < 10:
+      print("Password is not long enough.")
+    elif password != verify:
       print("Your Passwords don't match.")
+    elif lowerCount <= 1:
+      print("Password must contain at least 2 lower-cased characters.")
+    elif upperCount <=1:
+      print("Password must contain at least 2 upper-cased characters.")
+    elif numberCount <= 1:
+      print("Password must contain at least 2 numbers.")
+    elif charCount <= 1:
+      print("Password must contain at least 2 2 special characters ('!', '@', '#', '$', '%', '^', '&', '*', '(', ')').")
     else:
       break
 
