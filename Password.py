@@ -7,12 +7,14 @@ number = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 chars = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')']
 characters = lower + upper + number + chars
 
+
 #Shuffle characters to create Individual Account Cipher.
 def Shuffle():  
   random.shuffle(characters)  
   accountCipher = characters + characters  
   return accountCipher
   
+
 #Create and Verify Password.
 def CreatePWD():
   while True:
@@ -25,6 +27,7 @@ def CreatePWD():
 
   return password
 
+
 #Create and Verify PIN. 
 def CreatePIN():  #TODO:  Finalize PIN Verification.
   while True:
@@ -32,6 +35,7 @@ def CreatePIN():  #TODO:  Finalize PIN Verification.
     verify = int(getpass.getpass("Retype your PIN:  "))
     if pin != verify:
       print
+
 
 #Create character list.
 
