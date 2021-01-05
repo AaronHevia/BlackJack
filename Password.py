@@ -16,7 +16,7 @@ def Shuffle():
 #Create and Verify Password.
 def CreatePWD():
   while True:
-    password = getpass.getpass("Enter a Password (Password must contain):  ") #TODO: Finish Password Creation.
+    password = getpass.getpass("Enter a Password (Password must contain):  ")
     verify = getpass.getpass("Retype your Password:  ")
     if password != verify:
       print("Your Passwords don't match.")
@@ -25,8 +25,8 @@ def CreatePWD():
 
   return password
 
-#Create and Verify PIN.
-def CreatePIN():
+#Create and Verify PIN. 
+def CreatePIN():  #TODO:  Finalize PIN Verification.
   while True:
     pin = int(getpass.getpass("Enter a 3 to 6 digit PIN:  "))
     verify = int(getpass.getpass("Retype your PIN:  "))
