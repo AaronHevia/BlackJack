@@ -1,6 +1,6 @@
-import Password
+import password
 
-def AddNewPlayer(activePlayers, name, password, pin, characters):
+def AddNewPlayer(activePlayers, name, pwd, pin, characters):
     # New players will start with $1000, $$ Won, $$ Lost, Ciphered Password, PIN, and Shuffled Alphabet    
     player  = activePlayers[name] = [1000, 0, 0, password, pin, characters]
     return player
@@ -12,9 +12,9 @@ def NewPlayer(activePlayers, retiredPlayers):
 
     if i == 0:        
         #TODO:  Password, PIN and Characters creation.
-        password = ""    #TODO:  Get password from Password Class.
+        pwd = ""    #TODO:  Get password from Password Class.
         pin = 0 #TODO: Get "PIN" (Cipher) from Password Class.
-        characters = Password.Shuffle() 
+        # characters = password.Shuffle() 
     else:
         for player in allPlayers:
             if name == player:
@@ -22,7 +22,7 @@ def NewPlayer(activePlayers, retiredPlayers):
                 NewPlayer(activePlayers, retiredPlayers)
             else:                
                 #TODO:  Password, PIN and Characters creation.
-                password = ""    #TODO:  Get password from Password Class.
+                pwd = ""    #TODO:  Get password from Password Class.
                 pin = 0 #TODO: Get "PIN" (Cipher) from Password Class.
                 characters = [] #TODO: Get shuffled characters from Password Class.
         

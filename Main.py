@@ -1,35 +1,40 @@
 import os
 import sys
 import random
-import options
+from options import Options
 import account
 import cards
 from art import logo
 
+options = Options()
+
 activePlayers = {}
 retiredPlayers = {}
 
-deck = Cards.BuildDeck()
+deck = cards.BuildDeck()
 gameDeck = []
-drawFaceDown = Cards.DrawFaceDown()
+drawFaceDown = cards.DrawFaceDown()
 drawIndex = 0
-drawCard = Cards.DrawCard("10", "Spades") #remove after testing
+drawCard = cards.DrawCard("10", "Spades") #remove after testing
 
 os.system('cls') #Remove after finished.  Arrange what to display and use in between each hand call.
 print(logo)
-players = Options.SetPlayers()
-difficulty = Options.SetDifficulty()
-for i in range(players):
-    activePlayers = Account.NewPlayer(activePlayers, retiredPlayers)
+players = options.set_players()
+difficulty = options.set_difficulty()
 
-# Used for troubleshooting account process:
-print("Printing Live Players:\n")
-for player in activePlayers:
-    print(player)
+print(players)
+print(difficulty)
+# for i in range(players):
+#     activePlayers = account.NewPlayer(activePlayers, retiredPlayers)
 
-print("Printing Old Players:\n")
-for player in retiredPlayers:
-    print(player)
+# # Used for troubleshooting account process:
+# print("Printing Live Players:\n")
+# for player in activePlayers:
+#     print(player)
+
+# print("Printing Old Players:\n")
+# for player in retiredPlayers:
+#     print(player)
 
 
 
