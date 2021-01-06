@@ -1,10 +1,10 @@
 import os
 import sys
 import random
-import Options
-import Account
-import Cards
-from Art import logo
+import options
+import account
+import cards
+from art import logo
 
 activePlayers = {}
 retiredPlayers = {}
