@@ -1,7 +1,7 @@
-class Options:
-
+class Options:    
+    
     #Get Players in hand:
-    def set_players():
+    def set_players(self):
         """Sets the number of players that will be playing in the following hand."""
         while True:
             players = input("\nHow many people will be playing this hand? Choose a number from 1-7:  ")
@@ -16,7 +16,7 @@ class Options:
         return val
 
     #Difficulty: 1-9
-    def set_difficulty():
+    def set_difficulty(self):
         """Raises difficulty of the game.  The higher the number, the more decks that will be used (Difficulty will be 2 levels higher than the amount of players playing when there are 2 or more players)."""
         #TODO:  Fix logic so that it will automatically add or drop decks as players come in and out of the game.
         while True:
