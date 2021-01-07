@@ -3,19 +3,22 @@ import sys
 import random
 from options import Options
 import account
-import cards
+from card import Card
 from art import logo
 
+#Instantiate Classes.
 options = Options()
+card = Card()
 
+#Create Initial Variables.
 activePlayers = {}
 retiredPlayers = {}
 
-deck = cards.BuildDeck()
-gameDeck = []
-drawFaceDown = cards.DrawFaceDown()
-drawIndex = 0
-drawCard = cards.DrawCard("10", "Spades") #remove after testing
+deck = card.build_deck()
+game_deck = []
+draw_face_down = card.draw_face_down()
+draw_index = 0
+draw_card = card.draw_card("10", "Spades") #remove after testing
 
 os.system('cls') #Remove after finished.  Arrange what to display and use in between each hand call.
 print(logo)
@@ -24,6 +27,16 @@ difficulty = options.set_difficulty()
 
 print(players)
 print(difficulty)
+
+
+
+
+
+
+
+
+
+
 # for i in range(players):
 #     activePlayers = account.NewPlayer(activePlayers, retiredPlayers)
 
@@ -65,7 +78,7 @@ print(difficulty)
 
 
 
-#How many players?
+
 
 #Enter Bids
     #min 5.00
