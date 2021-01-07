@@ -27,8 +27,10 @@ class Card:
             "K": 10
         }
 
-    #Create a 52 card deck:
-    def build_deck(self):    
+    
+    def build_deck(self):
+        """Builds a deck depending on difficulty level."""
+
         deck = []
 
         for card in self.card_list:    
@@ -37,8 +39,10 @@ class Card:
                 deck.append(temp_list)    
         return deck
 
-    #ASCII image of a drawn card:
+
     def draw_card(self, card, suit):
+        """Creates an ASCII image of the drawn card."""
+
         icon = self.suits[suit]
         card_digit_1 = ""
         card_digit_2 = ""
@@ -59,9 +63,11 @@ class Card:
             "└─────┘"
         ]    
         return drawn_card
+    
 
-    #ASCII image of a Face-Down Card:
     def draw_face_down(self):
+        """Creates an ASCII image of a face-down card."""
+        
         face_down = [
             "┌─────┐", 
             "|░░░░░|",
