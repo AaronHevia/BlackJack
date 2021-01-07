@@ -1,35 +1,73 @@
 import os
 import sys
 import random
-import Options
-import Account
-import Cards
-from Art import logo
+from options import Options
+import account
+from card import Card
+from art import logo
 
+#Instantiate Classes.
+options = Options()
+card = Card()
+
+#Create Initial Variables to be used throughout.
+players = 0
+difficulty = 0
 activePlayers = {}
 retiredPlayers = {}
 
-deck = Cards.BuildDeck()
-gameDeck = []
-drawFaceDown = Cards.DrawFaceDown()
-drawIndex = 0
-drawCard = Cards.DrawCard("10", "Spades") #remove after testing
 
-os.system('cls') #Remove after finished.  Arrange what to display and use in between each hand call.
 print(logo)
-players = Options.SetPlayers()
-difficulty = Options.SetDifficulty()
-for i in range(players):
-    activePlayers = Account.NewPlayer(activePlayers, retiredPlayers)
+players = options.set_players()
+difficulty = options.set_difficulty()
 
-# Used for troubleshooting account process:
-print("Printing Live Players:\n")
-for player in activePlayers:
-    print(player)
+# Testing area.
+print(players)
+print(difficulty)
 
-print("Printing Old Players:\n")
-for player in retiredPlayers:
-    print(player)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# os.system('cls') #Remove after finished.  Arrange what to display and use in between each hand call.
+
+# deck = card.build_deck()
+# game_deck = []
+# draw_face_down = card.draw_face_down()
+# draw_index = 0
+# draw_card = card.draw_card("10", "Spades") #remove after testing
+
+
+
+
+
+
+
+
+
+
+# for i in range(players):
+#     activePlayers = account.NewPlayer(activePlayers, retiredPlayers)
+
+# # Used for troubleshooting account process:
+# print("Printing Live Players:\n")
+# for player in activePlayers:
+#     print(player)
+
+# print("Printing Old Players:\n")
+# for player in retiredPlayers:
+#     print(player)
 
 
 
@@ -52,15 +90,14 @@ for player in retiredPlayers:
 #     drawIndex +=1
 
 
-# print(logo)
-# print(len(deck))
 
 
 
 
 
 
-#How many players?
+
+
 
 #Enter Bids
     #min 5.00
