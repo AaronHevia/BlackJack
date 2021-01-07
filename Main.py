@@ -10,23 +10,43 @@ from art import logo
 options = Options()
 card = Card()
 
-#Create Initial Variables.
+#Create Initial Variables to be used throughout.
+players = 0
+difficulty = 0
 activePlayers = {}
 retiredPlayers = {}
 
-deck = card.build_deck()
-game_deck = []
-draw_face_down = card.draw_face_down()
-draw_index = 0
-draw_card = card.draw_card("10", "Spades") #remove after testing
 
-os.system('cls') #Remove after finished.  Arrange what to display and use in between each hand call.
 print(logo)
 players = options.set_players()
 difficulty = options.set_difficulty()
 
+# Testing area.
 print(players)
 print(difficulty)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# os.system('cls') #Remove after finished.  Arrange what to display and use in between each hand call.
+
+# deck = card.build_deck()
+# game_deck = []
+# draw_face_down = card.draw_face_down()
+# draw_index = 0
+# draw_card = card.draw_card("10", "Spades") #remove after testing
 
 
 
@@ -70,8 +90,7 @@ print(difficulty)
 #     drawIndex +=1
 
 
-# print(logo)
-# print(len(deck))
+
 
 
 
