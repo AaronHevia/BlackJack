@@ -1,32 +1,37 @@
 class Account:
 
     def __init__(self):
+        self.password = ""    # TODO:  Get password from Password Class.
+        self.pin = 0 # TODO: Get "PIN" (Cipher) from Password Class.
+        self.characters = [] # TODO: Get shuffled characters from Password Class.
+
+
+    def get_password(self):
+        # TODO:  Password, PIN and Characters creation:
         pass
-
-
-    def NewPlayer(self, activePlayers, retiredPlayers):    
+        
+        
+    def new_player(self, activePlayers, retiredPlayers):
+        # Merge lists of dictionaries to conduct only 1 parse.            
         allPlayers = activePlayers | retiredPlayers    
         name = input("\nEnter a player name:  ")        
 
         if len(allPlayers) == 0:        
-            #TODO:  Password, PIN and Characters creation.
-            pwd = ""    #TODO:  Get password from Password Class.
-            pin = 0 #TODO: Get "PIN" (Cipher) from Password Class.
-            # characters = password.Shuffle() 
+            self.get_password()
         else:
             for player in allPlayers:
                 if name == player:
                     print("Player already exists in session.  Enter a new player.")
-                    self.NewPlayer(activePlayers, retiredPlayers)
+                    self.new_player(activePlayers, retiredPlayers)
                 else:                
-                    #TODO:  Password, PIN and Characters creation.
-                    pwd = ""    #TODO:  Get password from Password Class.
-                    pin = 0 #TODO: Get "PIN" (Cipher) from Password Class.
-                    characters = [] #TODO: Get shuffled characters from Password Class.
+                    self.get_password
 
-        # New players will start with $1000, $$ Won, $$ Lost, Ciphered Password, PIN, and Shuffled Alphabet    
-        # Add new player to activePlayers
-        activePlayers[name] = [1000, 0, 0, pwd, pin, characters]            
+        # New players will start with $1000, $$ Won, $$ Lost, Ciphered Password, PIN, and Shuffled Alphabet            
+        activePlayers[name] = [1000, 0, 0, self.password, self.pin, self.characters] 
+        #clear password, pin and characters to protect info.
+        self.password = ""
+        self.pin = 0
+        self.characters = []
         
         return activePlayers
 
