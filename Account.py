@@ -2,11 +2,7 @@ class Account:
 
     def __init__(self):
         pass
-
-    def AddNewPlayer(self, activePlayers, name, pwd, pin, characters):
-        # New players will start with $1000, $$ Won, $$ Lost, Ciphered Password, PIN, and Shuffled Alphabet    
-        player  = activePlayers[name] = [1000, 0, 0, password, pin, characters]
-        return player
+    
 
     def NewPlayer(self, activePlayers, retiredPlayers):    
         allPlayers = activePlayers | retiredPlayers    
@@ -27,8 +23,11 @@ class Account:
                     pwd = ""    #TODO:  Get password from Password Class.
                     pin = 0 #TODO: Get "PIN" (Cipher) from Password Class.
                     characters = [] #TODO: Get shuffled characters from Password Class.
-            
-        self.AddNewPlayer(activePlayers, name, password, pin, characters)
+
+        # New players will start with $1000, $$ Won, $$ Lost, Ciphered Password, PIN, and Shuffled Alphabet    
+        # Add new player to activePlayers
+        player  = activePlayers[name] = [1000, 0, 0, password, pin, characters]            
+        
         return activePlayers
 
     def RetirePlayer(self, activePlayers, retiredPlayers):
