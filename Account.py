@@ -2,7 +2,7 @@ class Account:
 
     def __init__(self):
         pass
-    
+
 
     def NewPlayer(self, activePlayers, retiredPlayers):    
         allPlayers = activePlayers | retiredPlayers    
@@ -26,7 +26,7 @@ class Account:
 
         # New players will start with $1000, $$ Won, $$ Lost, Ciphered Password, PIN, and Shuffled Alphabet    
         # Add new player to activePlayers
-        player  = activePlayers[name] = [1000, 0, 0, password, pin, characters]            
+        activePlayers[name] = [1000, 0, 0, pwd, pin, characters]            
         
         return activePlayers
 
