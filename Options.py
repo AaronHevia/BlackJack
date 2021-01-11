@@ -1,3 +1,7 @@
+from validator import Validator
+
+VALIDATOR = Validator()
+
 class Options:    
     
     #Get Players in hand:
